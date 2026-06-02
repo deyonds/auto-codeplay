@@ -34,13 +34,16 @@ The extension supports configurable typing speed, replaying code from relative o
 
 ### Screenshots / GIFs
 
-Add screenshots or GIFs to demonstrate the extension in action.
+## Screenshot
+![Source File Demo](images/Screenshot_01.png)
 
-Example:
+![Commands](images/Screenshot_02.png)
 
-```markdown
+![Features Demo](images/Screenshot_03.png)
+
+## Live Replay Demo
 ![Live Code Replay Demo](images/demo.gif)
-```
+
 
 > Tip: A short GIF showing a replay session, pause, and resume sequence can significantly improve Marketplace engagement.
 
