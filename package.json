@@ -69,7 +69,7 @@
         },
         "liveReplay.sourceFile": {
           "type": "string",
-          "default": "replay-code.txt",
+          "default": " ",
           "description": "Relative path from workspace root OR absolute path anywhere on your system"
         },
         "liveReplay.startLine": {
