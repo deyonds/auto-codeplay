@@ -1,0 +1,106 @@
+{
+  "name": "live-code-replay",
+  "displayName": "Live Code Replay",
+  "description": "Replay source code as realistic typing animations inside VS Code. Supports relative and absolute file paths, configurable typing speed, pause, and resume.",
+  "version": "0.0.1",
+  "publisher": "dey",
+  "repository": "",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "live code replay",
+    "code typing animation",
+    "simulate typing",
+    "editor automation",
+    "vscode extension",
+    "typing effect",
+    "code presentation",
+    "demo typing",
+    "pause and resume replay",
+    "configurable speed",
+    "replay typing"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeReplay.start",
+        "title": "Live Code Replay: Start"
+      },
+      {
+        "command": "codeReplay.pause",
+        "title": "Live Code Replay: Pause"
+      },
+      {
+        "command": "codeReplay.resume",
+        "title": "Live Code Replay: Resume"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codeReplay.start",
+        "key": "ctrl+alt+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeReplay.pause",
+        "key": "ctrl+alt+p",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeReplay.resume",
+        "key": "ctrl+alt+r",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Live Code Replay",
+      "properties": {
+        "liveReplay.speed": {
+          "type": "number",
+          "default": 50,
+          "description": "Typing speed in characters per second"
+        },
+        "liveReplay.sourceFile": {
+          "type": "string",
+          "default": "replay-code.txt",
+          "description": "Relative path from workspace root OR absolute path anywhere on your system"
+        },
+        "liveReplay.startLine": {
+          "type": "number",
+          "default": 0,
+          "description": "Starting line of auto typing"
+        },
+        "liveReplay.sourceSkipLine": {
+          "type": "number",
+          "default": 0,
+          "description": "Skipping lines from source file of auto typing"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
