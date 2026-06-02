@@ -45,9 +45,6 @@ The extension supports configurable typing speed, replaying code from relative o
 ![Live Code Replay Demo](images/demo.gif)
 
 
-> Tip: A short GIF showing a replay session, pause, and resume sequence can significantly improve Marketplace engagement.
-
----
 
 ## Requirements
 
@@ -203,7 +200,7 @@ Special thanks to the original author for creating and open-sourcing the project
 
 ## Development Notes
 
-Some implementation details, debugging assistance, and documentation improvements were developed with the help of OpenAI's ChatGPT.
+Some implementation details, debugging assistance, image generation, and documentation improvements were developed with the help of OpenAI's ChatGPT and Google's Gemini.
 
 
 
