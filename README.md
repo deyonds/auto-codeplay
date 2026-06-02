@@ -1,71 +1,199 @@
-# live-code-replay README
+# Live Code Replay README
 
-This is the README for your extension "live-code-replay". After writing up a brief description, we recommend including the following sections.
+Live Code Replay is a Visual Studio Code extension that simulates real-time code typing inside the editor. It is designed for coding tutorials, live demonstrations, presentations, classroom instruction, and content creation where code needs to appear as if it is being typed naturally.
 
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+The extension supports configurable typing speed, replaying code from relative or absolute file paths, and pause/resume controls for smooth demonstrations.
 
 ---
 
-## Following extension guidelines
+## Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+* Replay source code as realistic typing animations.
+* Support for both relative and absolute file paths.
+* Configurable typing speed.
+* Pause and resume replay at any time.
+* Continue replay from the exact position where it was paused.
+* Simple keyboard shortcuts for quick control.
+* Replay code directly into the active editor.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+### Commands
 
-## Working with Markdown
+| Command                  | Description            |
+| ------------------------ | ---------------------- |
+| Live Code Replay: Start  | Start code replay      |
+| Live Code Replay: Pause  | Pause an active replay |
+| Live Code Replay: Resume | Resume a paused replay |
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+### Default Shortcuts
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+| Action | Shortcut       |
+| ------ | -------------- |
+| Start  | Ctrl + Alt + S |
+| Pause  | Ctrl + Alt + P |
+| Resume | Ctrl + Alt + R |
 
-## For more information
+### Screenshots / GIFs
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Add screenshots or GIFs to demonstrate the extension in action.
 
-**Enjoy!**
+Example:
+
+```markdown
+![Live Code Replay Demo](images/demo.gif)
+```
+
+> Tip: A short GIF showing a replay session, pause, and resume sequence can significantly improve Marketplace engagement.
+
+---
+
+## Requirements
+
+### Visual Studio Code
+
+This extension requires:
+
+* VS Code 1.120.0 or later
+
+### No Additional Dependencies
+
+Live Code Replay works out of the box after installation and does not require any external tools or runtimes.
+
+---
+
+## Extension Settings
+
+This extension contributes the following settings:
+
+### `liveReplay.speed`
+
+Controls typing speed in characters per second.
+
+Default:
+
+```json
+"liveReplay.speed": 50
+```
+
+### `liveReplay.sourceFile`
+
+Specifies the source file used for replay.
+
+Supports:
+
+* Relative paths from the workspace root
+* Absolute paths anywhere on the system
+
+Default:
+
+```json
+"liveReplay.sourceFile": ""
+```
+
+Linux/macOS example:
+
+```json
+"liveReplay.sourceFile": "/home/user/projects/demo.py"
+```
+
+Windows example:
+
+```json
+"liveReplay.sourceFile": "C:\\Users\\User\\Desktop\\demo.py"
+```
+
+### `liveReplay.startLine`
+
+Defines the line number where replay should begin.
+
+Default:
+
+```json
+"liveReplay.startLine": 0
+```
+
+### `liveReplay.sourceSkipLine`
+
+Skips a specified number of lines from the source file before replay starts.
+
+Default:
+
+```json
+"liveReplay.sourceSkipLine": 0
+```
+
+---
+
+## Usage
+
+### Replay From a Configured Source File
+
+1. Open the file where code should be typed.
+2. Configure `liveReplay.sourceFile`.
+3. Run **Live Code Replay: Start** from the Command Palette.
+4. The extension begins typing into the active editor.
+
+### Replay the Current File
+
+If no source file is configured:
+
+1. Open a saved source file.
+2. Run **Live Code Replay: Start**.
+3. A new editor opens beside the current file.
+4. The extension replays the contents automatically.
+
+### Pause and Resume
+
+While replay is running:
+
+* Execute **Live Code Replay: Pause** to pause typing.
+* Execute **Live Code Replay: Resume** to continue.
+
+Replay resumes from the exact character where it was paused.
+
+---
+
+## Known Issues
+
+* Only one replay session can run at a time.
+* The destination editor must remain open during replay.
+* Very large source files may take longer to complete depending on the configured typing speed.
+
+If you encounter any issues, please report them through the project repository.
+
+---
+
+## Release Notes
+
+### 0.0.1
+
+Initial release of Live Code Replay.
+
+Features included:
+
+* Code replay functionality
+* Relative path support
+* Absolute path support
+* Configurable typing speed
+* Pause functionality
+* Resume functionality
+* Keyboard shortcuts
+
+---
+
+## Following Extension Guidelines
+
+Ensure that you've read through the VS Code Extension Guidelines and follow best practices for extension development.
+
+* https://code.visualstudio.com/api/references/extension-guidelines
+
+---
+
+## For More Information
+
+* https://code.visualstudio.com/docs
+* https://code.visualstudio.com/api
+* https://www.markdownguide.org/basic-syntax/
+
+---
+
+**Enjoy using Live Code Replay!**
