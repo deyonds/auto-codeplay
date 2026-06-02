@@ -182,6 +182,31 @@ Features included:
 * Keyboard shortcuts
 
 ---
+## Acknowledgements
+
+This project was inspired by and originally based on the "auto type ucode" extension created by MKSWEBS.
+
+Original Repository:
+https://github.com/Mx0M/autotype-code.git
+
+The original project provided the foundation for code replay functionality in Visual Studio Code.
+
+Additional enhancements in this fork include:
+
+* Pause and Resume replay support
+* Absolute file path support
+* Relative/Absolute path auto-detection
+* Improved replay workflow and configuration
+
+Special thanks to the original author for creating and open-sourcing the project.
+
+
+## Development Notes
+
+Some implementation details, debugging assistance, and documentation improvements were developed with the help of OpenAI's ChatGPT.
+
+
+
 
 ## Following Extension Guidelines
 
