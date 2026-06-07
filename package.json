@@ -3,7 +3,7 @@
   "displayName": "Live Code Replay",
   "description": "Replay source code as realistic typing animations inside VS Code. Supports relative and absolute file paths, configurable typing speed, pause, and resume.",
   "version": "0.0.1",
-  "publisher": "dey",
+  "publisher": "dtools",
   "repository": "https://github.com/deyonds/auto-codeplay.git",
   "engines": {
     "vscode": "^1.120.0"
